@@ -2,7 +2,7 @@ var
 a: array of integer;
 i, j, k, n: integer;
 begin
-write('Введите размер массива ');
+write('Г‚ГўГҐГ¤ГЁГІГҐ Г°Г Г§Г¬ГҐГ° Г¬Г Г±Г±ГЁГўГ  ');
 readln(n);
 setlength(a, n + 1);
 for i:= 1 to n - 1 do readln(a[i]);
@@ -17,6 +17,6 @@ begin
   j:= 1; 
   end;
 end;
-if j <> 0 then writeln('Наибольшая длина лесницы= ',k)
-else writeln('Наибольшая длина лесницы= ',j);
+if j <> 0 then writeln('ГЌГ ГЁГЎГ®Г«ГјГёГ Гї Г¤Г«ГЁГ­Г  Г«ГҐГ±Г­ГЁГ¶Г»= ',k)
+else writeln('ГЌГ ГЁГЎГ®Г«ГјГёГ Гї Г¤Г«ГЁГ­Г  Г«ГҐГ±Г­ГЁГ¶Г»= ',j);
 end.
