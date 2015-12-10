@@ -4,11 +4,11 @@ a: array  of integer;
 prefix: array  of integer;
 i, j, k, n, m, f: integer;
 begin
-writeln('Ввести длину массива');
+writeln('Г‚ГўГҐГ±ГІГЁ Г¤Г«ГЁГ­Гі Г¬Г Г±Г±ГЁГўГ ');
 readln(n);
 setlength(a, n + 1);
 setlength(prefix, n + 1);
-writeln('Ввести сам массив= ');
+writeln('Г‚ГўГҐГ±ГІГЁ Г±Г Г¬ Г¬Г Г±Г±ГЁГў= ');
 for i:= 1 to n do
  begin
   read(a[i]);
@@ -34,6 +34,6 @@ begin
  end
  else break;
 end;
-if (n - k + 1 = f) then writeln('последовательность периодична ')
-else writeln('последовательность не периодична ');
+if (n - k + 1 = f) then writeln('ГЇГ®Г±Г«ГҐГ¤Г®ГўГ ГІГҐГ«ГјГ­Г®Г±ГІГј ГЇГҐГ°ГЁГ®Г¤ГЁГ·Г­Г  ')
+else writeln('ГЇГ®Г±Г«ГҐГ¤Г®ГўГ ГІГҐГ«ГјГ­Г®Г±ГІГј Г­ГҐ ГЇГҐГ°ГЁГ®Г¤ГЁГ·Г­Г  ');
 end.
