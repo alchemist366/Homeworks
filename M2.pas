@@ -40,8 +40,8 @@ begin
     end;
     if ((sum1 <> sumstr) or (sum1 <> sumcolumn)) then begin sum := false; end;
   end;
-  if (sum = true) and (razm = true) then begin writeln('Этот квадрат магический'); end
-  else begin writeln('Этот квадрат не магический'); end;
+  if (sum = true) and (razm = true) then begin writeln('ГќГІГ®ГІ ГЄГўГ Г¤Г°Г ГІ Г¬Г ГЈГЁГ·ГҐГ±ГЄГЁГ©'); end
+  else begin writeln('ГќГІГ®ГІ ГЄГўГ Г¤Г°Г ГІ Г­ГҐ Г¬Г ГЈГЁГ·ГҐГ±ГЄГЁГ©'); end;
 end;
 
 begin
