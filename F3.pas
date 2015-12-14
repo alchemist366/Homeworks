@@ -45,7 +45,11 @@ begin
 end;
 
 begin
+<<<<<<< HEAD
   writeln('Ââåñòè äëèííó ìàñññèâà');
+=======
+  writeln('Ð’Ð²ÐµÑÑ‚Ð¸ Ð´Ð»Ð¸Ð½Ð½Ñƒ Ð¼Ð°ÑÑÑÐ¸Ð²Ð°');
+>>>>>>> d886cb3b893a3c03ad78aa5d36722aa929ead3e5
   readln(n);
   setlength(a, n + 1);
   for i := 1 to n do
@@ -57,4 +61,8 @@ begin
   rewrite(f);
   writeln(f, s);
   close(f);
+<<<<<<< HEAD
 end.
+=======
+end.
+>>>>>>> d886cb3b893a3c03ad78aa5d36722aa929ead3e5

@@ -1,34 +1,50 @@
 type
-Matrix = array [1..3] of array[1..3] of integer ;
+  Matrix = array [1..5] of array[1..5] of integer ;
+
 var
-a: matrix;
+  a: matrix;
+
 procedure readMatrix(var a: matrix);
 var
-i,j: integer;
+  i, j: integer;
 begin
- for i:= 1 to 3 do
-  for j:= 1 to 3 do
-  begin
-   read(a[i,j]);
-  end;
+  for i := 1 to 5 do
+    for j := 1 to 5 do
+    begin
+      read(a[i, j]);
+    end;
   writeln();
 end;
-procedure ShowMinInStr(var a: matrix);
+
+procedure MagicSquare(var a: matrix);
 var
-i, min, j: integer;
+  i, j, sum1,  sumstr, sumcolumn: integer;
+  razm, sum: boolean;
 begin
-j:= 1;
- for i:= 1 to 3 do
- begin
- min:= a[i,j];
-  for j:= 2 to 3 do
+  razm := true;
+  sum := true;
+  sum1 := 0;
+  for i := 1 to 5 do
   begin
-   if (a[i,j] < min) then begin min:= a[i,j]; end;
+    sum1 := sum1 + a[i, 1];
   end;
-  writeln(min);
- end;
+  for i := 1 to 5 do 
+  begin
+    sumstr := 0;
+    sumcolumn := 0;
+    for j := 1 to 5 do
+    begin  
+      if ((a[i, j] > 5) or (a[i, j] < 1)) then begin razm := false; end;
+      sumstr := sumstr + a[i, j];
+      sumcolumn := sumcolumn + a[j, i];
+    end;
+    if ((sum1 <> sumstr) or (sum1 <> sumcolumn)) then begin sum := false; end;
+  end;
+  if (sum = true) and (razm = true) then begin writeln('Ýòîò êâàäðàò ìàãè÷åñêèé'); end
+  else begin writeln('Ýòîò êâàäðàò íå ìàãè÷åñêèé'); end;
 end;
+
 begin
-readMatrix(a);
-ShowMinInStr(a);
+  readMatrix(a);
+  MagicSquare(a);
 end.

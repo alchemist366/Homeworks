@@ -36,10 +36,17 @@ begin
 end;
 
 begin
+<<<<<<< HEAD
   writeln('Ââåñòè äëèíó ìàññèâà');
   readln(n);
   setlength(a, n + 1);
   writeln('Ââèäèòå ñàì ìàññèâ');
+=======
+  writeln('Ð’Ð²ÐµÑÑ‚Ð¸ Ð´Ð»Ð¸Ð½Ñƒ Ð¼Ð°ÑÑÐ¸Ð²Ð°');
+  readln(n);
+  setlength(a, n + 1);
+  writeln('Ð’Ð²Ð¸Ð´Ð¸Ñ‚Ðµ ÑÐ°Ð¼ Ð¼Ð°ÑÑÐ¸Ð²');
+>>>>>>> d886cb3b893a3c03ad78aa5d36722aa929ead3e5
   for i := 1 to n do 
   begin
     readln(a[i]);
@@ -49,4 +56,8 @@ begin
   begin
     write(a[i], ' ');
   end;
+<<<<<<< HEAD
 end.
+=======
+end.
+>>>>>>> d886cb3b893a3c03ad78aa5d36722aa929ead3e5
