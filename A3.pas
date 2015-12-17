@@ -1,22 +1,40 @@
+﻿var
+  a: array of integer;
+  i, j, k, n: integer;
+procedure FindMaxStairs(c: array of integer; n: integer; var k: integer);
 var
-a: array of integer;
-i, j, k, n: integer;
-begin
-write('Ââåäèòå ðàçìåð ìàññèâà ');
-readln(n);
-setlength(a, n + 1);
-for i:= 1 to n - 1 do readln(a[i]);
-a[n]:= 0;
-j:= 1;
-k:= 1;
-for i:= 1 to n - 1 do
-begin
- if (a[i] < a[i + 1]) then inc(j)
- else begin 
-  if (k < j) then k:= j;
-  j:= 1; 
+i, j: integer;
+begin 
+  j := 1;
+  k := 1;
+  for i := 1 to n - 1 do
+  begin
+    if (a[i] < a[i + 1]) then 
+    begin
+      inc(j);
+    end
+    else 
+    begin
+      if (k < j) then
+      begin
+        k := j;
+      end;
+      j := 1; 
+    end;
   end;
 end;
-if j <> 0 then writeln('Íàèáîëüøàÿ äëèíà ëåñíèöû= ',k)
-else writeln('Íàèáîëüøàÿ äëèíà ëåñíèöû= ',j);
+begin
+  write('Write length of array ');
+  readln(n);
+  writeln('Write elements of array');
+  setlength(a, n + 1);
+  for i := 1 to n  do
+  begin
+    readln(a[i]);
+  end;
+ 
+  FindMaxStairs(a, n, k);
+  
+  writeln('the longest stairs = ', k)
+
 end.
