@@ -44,7 +44,8 @@ begin
     end
     else 
     begin
-      sum := sum + (y + x + l) * step(length(s1) - i); l := 0; 
+      sum := sum + (y + x + l) * step(length(s1) - i); 
+      l := 0;
     end;
   end;
   
