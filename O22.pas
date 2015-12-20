@@ -1,4 +1,4 @@
-type
+﻿type
   massive = array of integer;
 
 var
@@ -34,18 +34,18 @@ begin
 end;
 
 begin
-  writeln('Ввести длину массива');
+  writeln('Enter the length of array');
   readln(n);
   setlength(a, n + 2);
-  writeln('Ввидите упорядоченный массив');
+  writeln('Enter your array');
   for i := 1 to n do 
   begin
     readln(a[i]);
   end;
-  writeln('Введите элемент который нужно вставить');
+  writeln('Enter the element you need to insert');
   readln(a[n + 1]); 
   SortMass3(a, n + 1);
-  writeln('Преобразованный массив');
+  writeln('Converted array');
   for i := 1 to n + 1 do
   begin
     write(a[i], ' ');

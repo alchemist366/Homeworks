@@ -1,4 +1,4 @@
-type
+﻿type
   Matrix = array [1..5] of array[1..5] of integer ;
 
 var
@@ -40,8 +40,8 @@ begin
     end;
     if ((sum1 <> sumstr) or (sum1 <> sumcolumn)) then begin sum := false; end;
   end;
-  if (sum = true) and (razm = true) then begin writeln('Ýòîò êâàäðàò ìàãè÷åñêèé'); end
-  else begin writeln('Ýòîò êâàäðàò íå ìàãè÷åñêèé'); end;
+  if (sum = true) and (razm = true) then begin writeln('It is magic square'); end
+  else begin writeln('It is not magic square'); end;
 end;
 
 begin

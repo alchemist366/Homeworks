@@ -36,17 +36,10 @@ begin
 end;
 
 begin
-<<<<<<< HEAD
-  writeln('Ââåñòè äëèíó ìàññèâà');
+  writeln('Enter length of array');
   readln(n);
   setlength(a, n + 1);
-  writeln('Ââèäèòå ñàì ìàññèâ');
-=======
-  writeln('Ğ’Ğ²ĞµÑÑ‚Ğ¸ Ğ´Ğ»Ğ¸Ğ½Ñƒ Ğ¼Ğ°ÑÑĞ¸Ğ²Ğ°');
-  readln(n);
-  setlength(a, n + 1);
-  writeln('Ğ’Ğ²Ğ¸Ğ´Ğ¸Ñ‚Ğµ ÑĞ°Ğ¼ Ğ¼Ğ°ÑÑĞ¸Ğ²');
->>>>>>> d886cb3b893a3c03ad78aa5d36722aa929ead3e5
+  writeln('Enter your array');
   for i := 1 to n do 
   begin
     readln(a[i]);
@@ -56,8 +49,4 @@ begin
   begin
     write(a[i], ' ');
   end;
-<<<<<<< HEAD
 end.
-=======
-end.
->>>>>>> d886cb3b893a3c03ad78aa5d36722aa929ead3e5

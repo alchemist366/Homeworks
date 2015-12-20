@@ -60,9 +60,10 @@ begin
 end;
 
 begin
-  assign(f, 'file.txt');
+  assign(f, 'TestData\INPUTF2.txt');
   reset(f);
   i := 0;
+  
   while not eof(f) do
   begin
     inc(i);
@@ -78,8 +79,12 @@ begin
       i := 0;
     end;
   end;
+  
+  x := connectInt(c, i );
+  if (x <> -1) then sum := sum + x;
+  
   close(f);
-  assign(f2, 'file2.txt');
+  assign(f2, 'TestData\OUTPUTF2.txt');
   rewrite(f2);
   write(f2, sum);
   close(f2);

@@ -9,6 +9,7 @@ begin
   k := 1;
   for i := 1 to n - 1 do
   begin
+  
     if (a[i] < a[i + 1]) then 
     begin
       inc(j);
@@ -21,6 +22,11 @@ begin
       end;
       j := 1; 
     end;
+    
+    if (k < j) then
+      begin
+        k := j;
+      end;
   end;
 end;
 begin

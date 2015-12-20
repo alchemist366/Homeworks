@@ -1,4 +1,4 @@
-type
+﻿type
   massive = array of integer;
 
 var
@@ -12,7 +12,7 @@ begin
   st := 1;
   en := n;
   cr := (st + en ) div 2;
-  while (st <> en - 1)do
+  while (st <> en - 1) do
   begin
     if (x > mass[st]) then 
     begin
@@ -22,7 +22,7 @@ begin
     begin
       en := cr;
     end;
-    cr:= (st + en ) div 2;
+    cr := (st + en ) div 2;
   end; 
   if (x = mass[st]) then 
   begin
@@ -31,32 +31,39 @@ begin
   else
   if (x = mass[en]) then
   begin
-  DihtamFinde := en;
+    DihtamFinde := en;
   end
   else
   begin
-    DihtamFinde := -1;
+    if (x = mass[st - 1]) then
+    begin
+      DihtamFinde := st - 1; 
+    end
+    else
+    begin
+      DihtamFinde := -1;
+    end;
   end;
 end;
 
 begin
-  writeln('Ввести длину массива');
+  writeln('Enter the length of your array');
   readln(n);
   setlength(a, n + 1);
-  writeln('Введите сам массив');
+  writeln('Enter your array');
   for i := 1 to n do 
   begin
     readln(a[i]);
   end;
-  writeln('Введите элемент который нужно найти в массиве');
+  writeln('Enter the element eoy need to find in your array');
   readln(k);
   x := DihtamFinde(a, n, k);
   if x <> -1 then
   begin
-    writeln('Ваш элемент находится в массиве на ', x, ' месте');
+    writeln('Your element stand on ', x, ' place');
   end
   else
   begin
-    writeln('Вашего элемента нет в данном массиве');
+    writeln('The element is not exist in your array');
   end;
 end.

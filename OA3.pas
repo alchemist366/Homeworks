@@ -1,4 +1,4 @@
-type
+﻿type
   massive = array of integer;
 
 var
@@ -43,22 +43,23 @@ begin
 end;
 
 begin
-  writeln('Ввести длину I массива');
+  writeln('Enter the length of I array');
   readln(n);
   setlength(a, n + 1);
-  writeln('Введите сам I массив');
+  writeln('Enter your I array');
   for i := 1 to n do 
   begin
     readln(a[i]);
   end;
-  writeln('Ввести длину II массива');
+  writeln('Enter the length of II array');
   readln(m);
   setlength(b, m + 1);
-  writeln('Введите сам II массив');
+  writeln('Enter your II array');
   for i := 1 to m do 
   begin
     readln(b[i]);
   end;
+  
   if (n > m) then
   begin
     setlength(c, n + 1);
@@ -69,6 +70,7 @@ begin
     setlength(c, m + 1);
     razn(c, b, a, en, m, n);
   end;
+  
   for i := 1 to en do
   begin
     write(c[i], ' ');

@@ -7,3 +7,5 @@
 2
 3
 4
+
+Ответ array is periodic 
