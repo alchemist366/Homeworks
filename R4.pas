@@ -8,6 +8,8 @@
   end;
 
 var
+  ch: char;
+  f: text;
   a: array of abiturient;
   i, n, k: integer;
   s: string;
@@ -16,7 +18,7 @@ begin
   writeln('Enter the number of entrants');
   readln(n);
   setlength(a, n + 1);
-  writeln('Enter the name of each applicant, the total score for all the exams or not there is a gold medal (Yes / No), and 5 at one of the examination (Yes / No)');
+  writeln('Enter the Second name and First name of each applicant, the total score for all the exams or not there is a gold medal (Yes / No), and 5 at one of the examination (Yes / No)');
   for i := 1 to n do
   begin
     writeln('applicant#', i);
@@ -44,16 +46,26 @@ begin
   end;
   writeln('Enter a passing grade');
   readln(k);
+  assign(f, 'TestData\OUTPUTR4');
+  rewrite(f);
   for i := 1 to n do
   begin
-    write('applicant № ', i, ' - ');
+    write(f, 'applicant № ', i, ' - ');
     if ((a[i].GoldMedal = true) and (a[i].FiveForEkzam = true)) or (a[i].ball >= k) then
     begin
-      writeln(a[i].SecondName, ' ', a[i].FirstName, ' enrolled');
+      writeln(f, a[i].SecondName, ' ', a[i].FirstName, ' enrolled');
     end
     else
     begin
-      writeln(a[i].SecondName, ' ', a[i].FirstName, '  not enrolled');
+      writeln(f, a[i].SecondName, ' ', a[i].FirstName, '  not enrolled');
     end;
+  end;
+  close(f);
+  assign(f, 'TestData\OUTPUTR4');
+  reset(f);
+  while not eof(f) do
+  begin
+    read(f, ch);
+    write(ch);
   end;
 end.
