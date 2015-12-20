@@ -1,4 +1,4 @@
-type
+﻿type
   abiturient = record
     SecondName: string;
     FirstName: string;
@@ -13,47 +13,47 @@ var
   s: string;
 
 begin
-  writeln('Введите кол-во абитуриентов');
+  writeln('Enter the number of entrants');
   readln(n);
   setlength(a, n + 1);
-  writeln('Введите имя каждого абитуриента, суммарный бал за все экзамены, есть или нет золотая медаль(Да/ Нет)  и 5 за один из экзаменов (Да/ Нет)');
+  writeln('Enter the name of each applicant, the total score for all the exams or not there is a gold medal (Yes / No), and 5 at one of the examination (Yes / No)');
   for i := 1 to n do
   begin
-    writeln('Абитуриент#', i);
+    writeln('applicant#', i);
     readln(a[i].SecondName);
     readln(a[i].FirstName);
     readln(a[i].ball);
     readln(s);
-    if(s = 'Да') then
+    if(s = 'Yes') then
     begin
       a[i].GoldMedal := true;
     end;
-    if(s = 'Нет') then
+    if(s = 'No') then
     begin
       a[i].GoldMedal := false;
     end;
     readln(s);
-    if(s = 'Да') then
+    if(s = 'Yes') then
     begin
       a[i].FiveForEkzam := true;
     end;
-    if(s = 'Нет') then
+    if(s = 'No') then
     begin
       a[i].FiveForEkzam := false;
     end;
   end;
-  writeln('Введите проходной балл');
+  writeln('Enter a passing grade');
   readln(k);
   for i := 1 to n do
   begin
-    write('Абитуриент № ', i, ' - ');
+    write('applicant № ', i, ' - ');
     if ((a[i].GoldMedal = true) and (a[i].FiveForEkzam = true)) or (a[i].ball >= k) then
     begin
-      writeln(a[i].SecondName, ' ', a[i].FirstName, ' зачислен');
+      writeln(a[i].SecondName, ' ', a[i].FirstName, ' enrolled');
     end
     else
     begin
-      writeln(a[i].SecondName, ' ', a[i].FirstName, '  не зачислен');
+      writeln(a[i].SecondName, ' ', a[i].FirstName, '  not enrolled');
     end;
   end;
 end.

@@ -1,17 +1,32 @@
-type
+﻿type
   koordinat = record
     x: integer;
     y: integer;
   end;
+  ar =  array [1..100] of koordinat;
 
 var
-  a: array [1..100] of koordinat;
+  a: ar;
   i, n, k, b: integer;
   f: text;
   flag: boolean;
 
+procedure OnLine(var flag: boolean; a: ar; n, k, b: integer );
+var
+i: integer;
 begin
-  assign(f, 'file.txt');
+  flag := true;
+  for i := 1 to n do
+  begin
+    if (a[i].y <> k * a[i].x + b) then
+    begin
+      flag := false;
+    end;
+  end;
+end;
+
+begin
+  assign(f, 'TestData\InputR2.txt');
   reset(f);
   while not eof(f) do
   begin
@@ -21,22 +36,17 @@ begin
     inc(n);
   end;
   close(f);
-  writeln('y = kx + b ; введите k и b');
+  writeln('y = kx + b ; Enter k and b');
   readln(k, b);
-  flag := true;
-  for i := 1 to n do
-  begin
-    if (a[i].y <> k * a[i].x + b) then
-    begin
-      flag := false;
-    end;
-  end;
+  
+  OnLine(flag, a, n, k, b);
+  
   if (flag) then
   begin
-    writeln('все точки принадлежат числовой прямой');
+    writeln('All points belong your line');
   end
   else
   begin
-    writeln('есть точки, которые не принадлежат числовой прямой');
+    writeln('There are some points that do not belong to line');
   end;
 end.
