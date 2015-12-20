@@ -46,17 +46,17 @@ end;
 begin
   setlength(a, 101);
   setlength(b, 101);
-  assign(f1, 'file.txt');
-  assign(f2, 'file2.txt');
+  assign(f1, 'TestData\1INPUTOF1.txt');
+  assign(f2, 'TestData\2INPUTOF1.txt');
   reset(f1);
   reset(f2);
-  while not eof(f1) do
+  while (a[i] <> -1) do
   begin
     inc(i);
     read(f1, a[i]);
     inc(n);
   end;
-  while not eof(f2) do
+  while (b[j] <> -1) do
   begin
     inc(j);
     read(f2, b[j]);
@@ -66,13 +66,13 @@ begin
   close(f2);
   if (n >= m) then
   begin
-  setlength(c, n + 1);
-  razn(c, a, b, en, n, m);
+    setlength(c, n + 1);
+    razn(c, a, b, en, n - 1, m - 1);
   end
   else
   begin
-  setlength(c, m + 1);
-  razn(c, b, a, en, m, n);
+    setlength(c, m + 1);
+    razn(c, b, a, en, m - 1, n - 1);
   end;
   for i := 1 to en do
   begin

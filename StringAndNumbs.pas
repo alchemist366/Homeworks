@@ -9,12 +9,12 @@ function step(i: integer): integer;
 var
   j, f: integer;
 begin
-f:= 1;
-    for j := 1 to i do
-    begin
-      f := f * 10;
-    end;
-    step := f;
+  f := 1;
+  for j := 1 to i do
+  begin
+    f := f * 10;
+  end;
+  step := f;
 end;
 
 function is_digit(c: char): boolean;
@@ -61,13 +61,13 @@ end;
 begin
   writeln('Введите длину числа');
   readln(n);
-  setlength(c, n+1);
+  setlength(c, n + 1);
   for i := 1 to n do
   begin
     readln(c[i]);
     if (is_digit(c[i])) then writeln('Вы ввели число')
-  else writeln('Вы ввели  не число');
-  writeln('Ваше число = ', convertation(c[i]) );
+    else writeln('Вы ввели  не число');
+    writeln('Ваше число = ', convertation(c[i]) );
   end;
   x := connectInt(c, n);
   writeln(x);

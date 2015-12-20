@@ -4,7 +4,7 @@ type
 var
   a, b, c: massive;
   i, j, n, m, en: integer;
-  f1, f2, f3: text;
+  f1, f2: text;
 
 procedure peresech(var c: massive; a, b: massive; var en: integer; n, m: integer);
 var
@@ -38,17 +38,17 @@ end;
 begin
   setlength(a, 101);
   setlength(b, 101);
-  assign(f1, 'file.txt');
-  assign(f2, 'file2.txt');
+  assign(f1, 'TestData\1INPUTOF1.txt');
+  assign(f2, 'TestData\2INPUTOF1.txt');
   reset(f1);
   reset(f2);
-  while not eof(f1) do
+  while (a[i] <> -1) do
   begin
     inc(i);
     read(f1, a[i]);
     inc(n);
   end;
-  while not eof(f2) do
+  while (b[j] <> -1) do
   begin
     inc(j);
     read(f2, b[j]);
@@ -57,7 +57,7 @@ begin
   close(f1);
   close(f2);
   setlength(c, 201 );
-  peresech(c, a, b, en, n, m);
+  peresech(c, a, b, en, n - 1, m - 1);
   for i := 1 to en do
   begin
     write(c[i], ' ');

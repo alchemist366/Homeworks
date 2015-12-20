@@ -44,6 +44,10 @@ begin
   else
   begin
      CheckOnEnter(b, a, m, n, k);
-     if (k <> -1) then writeln('Your 2 array include 1 since', k, 'place');
+     if (k <> -1) then writeln('Your 2 array include 1 since ', k, ' place');
+  end;
+  if (k = -1) then 
+  begin
+    writeln('arrays is not include each ather');
   end;
 end.
