@@ -59,16 +59,14 @@ begin
 end;
 
 begin
-  writeln('Введите длину числа');
+  writeln('Enter length of your number');
   readln(n);
   setlength(c, n + 1);
   for i := 1 to n do
   begin
     readln(c[i]);
-    if (is_digit(c[i])) then writeln('Вы ввели число')
-    else writeln('Вы ввели  не число');
-    writeln('Ваше число = ', convertation(c[i]) );
   end;
+  write('your number = ');
   x := connectInt(c, n);
   writeln(x);
 end.
